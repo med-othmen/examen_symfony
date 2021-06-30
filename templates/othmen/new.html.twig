@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Othmen{% endblock %}
+
+{% block body %}
+    <h1>Create new Othmen</h1>
+
+    {{ include('othmen/_form.html.twig') }}
+
+    <a href="{{ path('othmen_index') }}">back to list</a>
+{% endblock %}

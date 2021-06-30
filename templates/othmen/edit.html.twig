@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Othmen{% endblock %}
+
+{% block body %}
+    <h1>Edit Othmen</h1>
+
+    {{ include('othmen/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('othmen_index') }}">back to list</a>
+
+    {{ include('othmen/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Othmen index{% endblock %}
+
+{% block body %}
+    <h1>Othmen index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Image</th>
+                <th>Urlbutton</th>
+                <th>Txtbutton</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for othman in othmens %}
+            <tr>
+                <td>{{ othman.id }}</td>
+                <td>{{ othman.titre }}</td>
+                <td>{{ othman.contenu }}</td>
+                <td>{{ othman.image }}</td>
+                <td>{{ othman.urlbutton }}</td>
+                <td>{{ othman.txtbutton }}</td>
+                <td>
+                    <a href="{{ path('othmen_show', {'id': othman.id}) }}">show</a>
+                    <a href="{{ path('othmen_edit', {'id': othman.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('othmen_new') }}">Create new</a>
+{% endblock %}

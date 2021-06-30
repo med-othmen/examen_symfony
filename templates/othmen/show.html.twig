@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Othmen{% endblock %}
+
+{% block body %}
+    <h1>Othmen</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ othman.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ othman.titre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ othman.contenu }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ othman.image }}</td>
+            </tr>
+            <tr>
+                <th>Urlbutton</th>
+                <td>{{ othman.urlbutton }}</td>
+            </tr>
+            <tr>
+                <th>Txtbutton</th>
+                <td>{{ othman.txtbutton }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('othmen_index') }}">back to list</a>
+
+    <a href="{{ path('othmen_edit', {'id': othman.id}) }}">edit</a>
+
+    {{ include('othmen/_delete_form.html.twig') }}
+{% endblock %}
